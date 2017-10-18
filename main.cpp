@@ -130,56 +130,6 @@ int main ()
 				cin >> op;			
 				
 			}
-			else if (op=='l'){
-            for (i=0; i<4; i++) {
-					for (j=3; j>0; j--)
-					if (matr[i] [j] == 0) {
-						for (int k=j-1; k>=0; k--){
-							if (matr[i][k] != 0){
-								matr[i][j] = matr[i][k];
-								matr[i][k]=0;
-								
-							}
-						}
-					}
-				}
-				
-				for (i=0; i<4; i++) {
-					for (j=3; j>0;j-- )
-					if (matr[i][j] == matr[i] [j-1]) {
-						matr[i][j] += matr[i][j-1];
-						matr[i][j-1]=0;
-						m+=matr[i][j];
-					}
-				}
-				
-				for (i=0; i<4; i++) {
-					for (j=3; j>0; j--)
-					if (matr[i] [j] == 0) {
-						for (int k=j-1; k>=0; k--){
-							if (matr[i][k] != 0){
-								matr[i][j] = matr[i][k];
-								matr[i][k]=0;
-								
-							}
-						}
-					}
-				}
-				for ( i = 0; i < 4; i++) {
-					for ( j = 0; j < 4; j++) {
-						if (matr[i][j] == 0){
-						cout << "* ";
-					}
-					else {
-						cout << matr[i][j] << ' ';
-					}
-					}
-					cout << endl;
-				}
-				cout << "Score: " << m << endl;
-				cin >> op;			
-				
-			}
 			else if (op=='h'){
             for (i=0; i<4; i++) {
 					for (j=0; j<3; j++)
@@ -228,6 +178,53 @@ int main ()
 				cout << "Score: " << m << endl;
 				cin >> op;			
 			}
-	}
-	
-}
+			else if (op=='l'){
+            for (i=0; i<4; i++) {
+					for (j=3; j>0; j--)
+					if (matr[i] [j] == 0) {
+						for (int k=j-1; k>=0; k--){
+							if (matr[i][k] != 0){
+								matr[i][j] = matr[i][k];
+								matr[i][k]=0;
+								break;
+							}
+						}
+					}
+				}
+				
+				for (i=0; i<4; i++) {
+					for (j=3; j>0;j-- )
+					if (matr[i][j] == matr[i] [j-1]) {
+						matr[i][j] += matr[i][j-1];
+						matr[i][j-1]=0;
+						m+=matr[i][j];
+					}
+				}
+				
+				for (i=0; i<4; i++) {
+					for (j=3; j>0; j--)
+					if (matr[i] [j] == 0) {
+						for (int k=j-1; k>=0; k--){
+							if (matr[i][k] != 0){
+								matr[i][j] = matr[i][k];
+								matr[i][k]=0;
+								
+							}
+						}
+					}
+				}
+				for ( i = 0; i < 4; i++) {
+					for ( j = 0; j < 4; j++) {
+						if (matr[i][j] == 0){
+						cout << "* ";
+					}
+					else {
+						cout << matr[i][j] << ' ';
+					}
+					}
+					cout << endl;
+				}
+				cout << "Score: " << m << endl;
+				cin >> op;			
+				
+			}
